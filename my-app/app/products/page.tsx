@@ -21,4 +21,4 @@ const ProductList: React.FC = () => {
     );
 };
 
- ProductList;
+ export default ProductList;
