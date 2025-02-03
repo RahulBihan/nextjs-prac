@@ -15,7 +15,7 @@ const ProductList: React.FC = () => {
             <ul>
                 {products.map(product => (
                     <li key={product.id}>
-                        <Link href={`/products/${product.id}`}> {product.name} - {product.price}</Link>
+                        <Link href={`/products/${product.id}`} replace> {product.name} - {product.price}</Link>
                     </li>
                 ))}
             </ul>
