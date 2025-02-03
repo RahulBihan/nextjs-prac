@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 const ProductList: React.FC = () => {
     const products = [
@@ -9,11 +10,12 @@ const ProductList: React.FC = () => {
 
     return (
         <div>
+            <Link href="/">Home</Link>
             <h1>Product List</h1>
             <ul>
                 {products.map(product => (
                     <li key={product.id}>
-                        {product.name} - {product.price}
+                        <Link href={`/products/${product.id}`}> {product.name} - {product.price}</Link>
                     </li>
                 ))}
             </ul>
