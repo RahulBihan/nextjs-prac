@@ -3,14 +3,14 @@ import React from 'react';
 
 import Link from 'next/link';
 
-const Notifications: React.FC = () => {
+const ArchivedNotifications: React.FC = () => {
     return (
         <Card>
-            <h1>Notifications</h1>
+            <h1>ArchivedNotifications Notifications</h1>
             {/* Add your notification components or logic here */}
-            <Link href="/complex-dashboard/archived">Archived</Link>
+            <Link href="/complex-dashboard">Default</Link>
         </Card>
     );
 };
 
-export default Notifications;
+export default ArchivedNotifications;
