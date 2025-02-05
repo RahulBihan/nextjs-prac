@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 const navLinks = [{ href: '/register', label: 'Register' },
 { href: '/login', label: 'Login' },
 { href: '/forgot-password', label: 'Forgot Password' },
@@ -9,8 +10,14 @@ const navLinks = [{ href: '/register', label: 'Register' },
 
 export default function AuthLayouts({ children, }: { children: React.ReactNode }) {
     const pathname = usePathname();
+    const [input, setInput] = useState('');
     return (
         <div>
+            <div>
+                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
+                <button onClick={() => alert(input)}>Search</button>
+                // you can use template.tsx instead of page .tsx file to not preserve state
+            </div>
             {navLinks.map(link => {
                 const isActive = pathname.startsWith(link.href);
                 return (
