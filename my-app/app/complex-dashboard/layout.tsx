@@ -1,11 +1,14 @@
 import React from 'react';
-export default function DashboardLayout({children,users,revenue,notifications}:
+export default function DashboardLayout({children,users,revenue,notifications,login}:
     {children: React.ReactNode
         users: React.ReactNode,
         revenue: React.ReactNode,
-        notifications: React.ReactNode
+        notifications: React.ReactNode,
+        login: React.ReactNode
     }){
-    return (
+        const isLoggedIn = true; // true false based on condition
+    return isLoggedIn ? (
+
         <div>
             <div>{children}</div>
             <div style={{display: 'flex'}}>
@@ -16,6 +19,6 @@ export default function DashboardLayout({children,users,revenue,notifications}:
             </div>
             <div style={{display: 'flex', flex: 1}}>{notifications}</div>
         </div>
-    );
+    ) : (login);
 };
 
